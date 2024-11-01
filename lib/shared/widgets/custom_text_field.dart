@@ -60,13 +60,13 @@ class CustomTextField extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: SvgPicture.asset(prefixIcon!),
               )
-            :null,
+            :const SizedBox(width: 10),
         suffixIcon: suffixIcon != null
             ? Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: SvgPicture.asset(suffixIcon!),
               )
-            : null,
+            : const SizedBox(width: 10),
         enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: borderColor),
             borderRadius: BorderRadius.circular(borderRadius)),

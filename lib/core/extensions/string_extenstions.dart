@@ -40,15 +40,17 @@ extension StringExtenstions on String {
 
   String? passwordValidator(String? value) {
     // Password must be at least 8 characters and contain letters, numbers, and special characters
-    const String pattern = r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$';
-    final RegExp regex = RegExp(pattern);
+    // const String pattern = r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$';
+    // final RegExp regex = RegExp(pattern);
 
     if (value == null || value.isEmpty) {
       return 'password is required'.tr();
-    } else if (!regex.hasMatch(value)) {
-      return 'password must be at least 8 characters, include letters and numbers'
-          .tr();
-    } else {
+    }
+    // else if (!regex.hasMatch(value)) {
+    //   return 'password must be at least 8 characters, include letters and numbers'
+    //       .tr();
+    // }
+    else {
       return null;
     }
   }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "75952330083",
+    "project_id": "subcribeme-e5867",
+    "storage_bucket": "subcribeme-e5867.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75952330083:android:f560f3530e15828aaeaf56",
+        "android_client_info": {
+          "package_name": "com.hany.subcribe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG1UypOrBhBAVilZQR2etV-hnynAzpPqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

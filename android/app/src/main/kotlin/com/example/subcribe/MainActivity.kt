@@ -1,4 +1,4 @@
-package com.example.subcribe
+package com.hany.subcribe
 
 import io.flutter.embedding.android.FlutterActivity
 

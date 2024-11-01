@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:subcribe/core/extensions/context_extension.dart';
 import 'package:subcribe/core/extensions/string_extenstions.dart';
 import 'package:subcribe/core/resources/colors.dart';
-import 'package:subcribe/core/resources/images.dart';
 import 'package:subcribe/core/resources/styles.dart';
 import 'package:subcribe/modules/auth/cubit/login_cubit.dart';
 import 'package:subcribe/modules/auth/presentation/screens/signup_screen.dart';
@@ -51,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 67.h, bottom: 24.h),
-                child: Center(),
+                child: const Center(),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 4),
@@ -94,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: grey13W400,
                 ),
                 onTap: () {
-                  AppNavigation.navigateReplacement(SignUpScreen());
+                  AppNavigation.navigateReplacement(const SignUpScreen());
                 },
               )
             ],

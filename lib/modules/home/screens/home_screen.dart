@@ -2,9 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:subcribe/core/extensions/context_extension.dart';
-import 'package:subcribe/modules/pdf/presentation/screens/pdf_screen.dart';
 
 import '../../../core/resources/colors.dart';
+import '../../scan/presentation/screens/file_upload.dart';
+import '../../profile/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,9 +18,9 @@ class HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final pages=[
-    const PdfScreen(),
+    const FileUploadScreen(),
     const Text(""),
-    const Text(""),
+      const ProfileScreen(),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -30,6 +31,7 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,

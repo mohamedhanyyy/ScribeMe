@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +15,7 @@ import 'package:subcribe/shared/widgets/custom_text_field.dart';
 
 import '../../../../core/cubit/base_cubit_state.dart';
 import '../../../../shared/widgets/custom_pawword_text_field.dart';
+import 'forget_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -51,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 16.h),
               Center(
                 child: Text(
-                  "Welcome,\nGlad to see you",
+                  "Welcome to scribe me".tr(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18.sp,
@@ -63,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 8.h),
               Center(
                 child: Text(
-                  "Please log in to continue",
+                  "Please log in to continue".tr(),
                   style: TextStyle(
                     fontSize: 14.sp,
                     color: AppColors.grey,
@@ -71,23 +73,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 24),
-              const Text("Email address", style: primary16w600),
+              Text("Email address".tr(), style: primary16w600),
               CustomTextField(
-                hintText: 'Enter your email',
+                hintText: 'Enter your email'.tr(),
                 controller: emailController,
-                validator: (val) => val!.nameValidator(val),
+                validator: (val) => val!.emailValidator(val),
               ),
               SizedBox(height: 16.h),
-              const Text("Password", style: primary16w600),
+              Text("Password".tr(), style: primary16w600),
               CustomPasswordTextField(
-                hintText: 'Enter your password',
+                hintText: 'Enter your password'.tr(),
                 controller: passwordController,
                 validator: (val) => val!.passwordValidator(val),
               ),
               SizedBox(height: 8.h),
-              const Text(
-                'must include minimum 8 letters, numbers.',
-                style: TextStyle(
+              Text(
+                'must include minimum 8 letters, numbers.'.tr(),
+                style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     color: Color(0xff888888)),
@@ -95,10 +97,12 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Forgot password?",
-                    style: TextStyle(color: AppColors.primaryColor),
+                  onPressed: () {
+                    AppNavigation.navigate(const ForgetPasswordScreen());
+                  },
+                  child: Text(
+                    "Forgot password?".tr(),
+                    style: const TextStyle(color: AppColors.primaryColor),
                   ),
                 ),
               ),
@@ -111,15 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   return CustomElevatedButton(
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                        loginCubit.login(
+                        loginCubit.loginWithEmailAndPassword(
                             email: emailController.text,
                             password: passwordController.text);
                       }
                     },
-                    buttonText: 'Log in',
+                    buttonText: 'Log in'.tr(),
                     color: AppColors.secondaryColor,
-
-                    // : Colors.white,
                   );
                 },
               ),
@@ -130,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Divider(thickness: 1, color: AppColors.grey)),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: const Text("Or with", style: grey13W400),
+                    child: Text("Or with".tr(), style: grey13W400),
                   ),
                   const Expanded(
                       child: Divider(thickness: 1, color: AppColors.grey)),
@@ -140,15 +142,16 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await loginCubit.signInWithGoogle();
+                  },
                   icon: SvgPicture.asset('assets/icons/google.svg'),
-                  label: const Text("Google",
-                      style: TextStyle(
+                  label: Text("Google".tr(),
+                      style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                       )),
                   style: ElevatedButton.styleFrom(
-                    // backgroundColor: Colors.white,
                     side: const BorderSide(color: AppColors.grey),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
@@ -159,16 +162,16 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: TextButton(
                   onPressed: () {
-                    AppNavigation.navigateReplacement(const SignUpScreen());
+                    AppNavigation.navigate(const SignUpScreen());
                   },
-                  child: const Text.rich(
+                  child: Text.rich(
                     TextSpan(
-                      text: "No account yet? ",
+                      text: "No account yet? ".tr(),
                       style: lightGrey13W400,
                       children: [
                         TextSpan(
-                          text: "Signup",
-                          style: TextStyle(
+                          text: "Signup".tr(),
+                          style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontWeight: FontWeight.bold),
                         ),

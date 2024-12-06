@@ -1,6 +1,4 @@
-
 plugins {
-
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
@@ -11,18 +9,19 @@ plugins {
 android {
     def flutterVersionCode = project.hasProperty('versionCode') ? project.versionCode.toInteger() : 1
     def flutterVersionName = project.hasProperty('versionName') ? project.versionName : "1.0"
-
     namespace = "com.hany.subcribe"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = "25.1.8937393"
+    compileSdk = 34
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = 17
+        jvmTarget = '17'
     }
+
     defaultConfig {
         applicationId = "com.hany.subcribe"
         minSdk = 23
@@ -30,6 +29,7 @@ android {
         versionCode = flutterVersionCode
         versionName = flutterVersionName
     }
+
     buildTypes {
         release {
             signingConfig = signingConfigs.debug

@@ -3,8 +3,7 @@ class SlidesModel {
 
   SlidesModel({this.slidesText});
 
-  // Use proper type safety to avoid casting errors.
-  factory SlidesModel.fromJson(Map<String, dynamic> json) {
+   factory SlidesModel.fromJson(Map<String, dynamic> json) {
     return SlidesModel(
       slidesText: (json['slides_text'] as List<dynamic>).cast<String>(),
     );

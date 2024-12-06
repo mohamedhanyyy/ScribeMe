@@ -2,12 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// import 'package:subcribe/shared/resources/colors.dart';
 
 import '../../core/resources/colors.dart';
 
 const customButtonTextStyle = TextStyle(
-    fontSize: 13, color: AppColors.whiteColor, fontWeight: FontWeight.w400);
+    fontSize: 16, color: AppColors.whiteColor, fontWeight: FontWeight.w600);
 
 class CustomElevatedButton extends StatelessWidget {
   final String? buttonText;

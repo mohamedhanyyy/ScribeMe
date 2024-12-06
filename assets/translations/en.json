@@ -68,7 +68,30 @@
   "Terms and conditions": "Terms and conditions",
   "Theme": "Theme",
   "Light": "Light",
-  "Dark": "Dark"
-
+  "Sign Up": "Sign Up",
+  "Register to get started": "Register to get started",
+  "Please fill all your data..": "Please fill all your data..",
+  "Full name": "Full name",
+  "User Name": "User Name",
+  "Email address": "Email address",
+  "Enter your email": "Enter your email",
+  "Phone number": "Phone number",
+  "Password": "Password",
+  "Enter your password": "Enter your password",
+  "must include minimum 8 letters, numbers.": "must include minimum 8 letters, numbers.",
+  "Confirm password": "Confirm password",
+  "Confirm your password": "Confirm your password",
+  "Sign up": "Sign up",
+  "Already have an account? ": "Already have an account? ",
+  "Login": "Login",
+  "Dark": "Dark",
+  "Welcome to scribe me": "Welcome to ScribeMe",
+  "Please log in to continue": "Please log in to continue",
+  "Forgot password?": "Forgot password?",
+  "Log in": "Log in",
+  "Or with": "Or with",
+  "Google": "Google",
+  "No account yet? ": "No account yet? ",
+  "Signup": "Signup"
 
  }

@@ -5,9 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/resources/colors.dart';
 import '../../core/resources/styles.dart';
 
-// import '../resources/colors.dart';
-// import '../resources/styles.dart';
-
 class CustomPasswordTextField extends StatefulWidget {
   final TextEditingController controller;
   final String? hintText;

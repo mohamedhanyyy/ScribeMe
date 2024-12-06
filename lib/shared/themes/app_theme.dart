@@ -7,8 +7,7 @@ import '../../core/resources/colors.dart';
 import '../../services/cache/cache_helper.dart';
 
 class AppThemes {
-  // Light Theme
-  static ThemeData whiteTheme = ThemeData(
+   static ThemeData whiteTheme = ThemeData(
     fontFamily: CacheHelper.getLang == 'ar' ? 'Cairo' : 'Roboto',
     dividerTheme: const DividerThemeData(color: Colors.transparent),
     primaryColor: AppColors.primaryColor,
@@ -31,8 +30,7 @@ class AppThemes {
     ).copyWith(surface: AppColors.whiteColor),
   );
 
-  // Dark Theme
-  static ThemeData darkTheme = ThemeData(
+   static ThemeData darkTheme = ThemeData(
     fontFamily: CacheHelper.getLang == 'ar' ? 'Cairo' : 'Roboto',
     brightness: Brightness.dark,
     dividerTheme: const DividerThemeData(color: Colors.grey),

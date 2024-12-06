@@ -6,6 +6,7 @@ import 'package:subcribe/core/extensions/context_extension.dart';
 import '../../../core/resources/colors.dart';
 import '../../scan/presentation/screens/file_upload.dart';
 import '../../profile/screens/profile_screen.dart';
+import '../../subscribtions/screens/subscription_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,10 +18,11 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  final pages=[
+  final pages = [
     const FileUploadScreen(),
     const Text(""),
-      const ProfileScreen(),
+    const SubscriptionScreen(),
+    const ProfileScreen(),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -31,9 +33,9 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         elevation: 0,
         items: [
@@ -48,17 +50,26 @@ class HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              'assets/icons/scan.svg',
+              'assets/icons/nav2.svg',
               colorFilter: _selectedIndex == 1
                   ? AppColors.primaryColor.toColorFilter
                   : Colors.grey.toColorFilter,
             ),
-            label: 'scan'.tr(),
+            label: 'Snap nScribe'.tr(),
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/nav3.svg',
+              colorFilter: _selectedIndex == 2
+                  ? AppColors.primaryColor.toColorFilter
+                  : Colors.grey.toColorFilter,
+            ),
+            label: 'Upgrade'.tr(),
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/icons/profile.svg',
-              colorFilter: _selectedIndex == 2
+              colorFilter: _selectedIndex == 3
                   ? AppColors.primaryColor.toColorFilter
                   : Colors.grey.toColorFilter,
             ),

@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,8 +30,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final formKey = GlobalKey<FormState>();
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController = TextEditingController(text: kDebugMode?'mohamed@gmail.com':null);
+  final passwordController = TextEditingController(text: kDebugMode?'P@ssw0rd':null);
 
   @override
   void initState() {
@@ -166,12 +167,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: Text.rich(
                     TextSpan(
-                      text: "No account yet? ".tr(),
-                      style: lightGrey13W400,
+                      text: "Don't have an account? ".tr(),
+                      style: lightGrey15W400,
                       children: [
                         TextSpan(
                           text: "Signup".tr(),
                           style: const TextStyle(
+                            fontSize: 16,
                               color: AppColors.primaryColor,
                               fontWeight: FontWeight.bold),
                         ),

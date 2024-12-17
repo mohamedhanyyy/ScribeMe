@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:subcribe/shared/widgets/custom_divider.dart';
 
 import '../../../core/resources/colors.dart';
+import '../../../shared/widgets/custom_appbar.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -17,6 +18,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButtonWidget(),
+
         centerTitle: true,
         title: const Text(
           "Settings",

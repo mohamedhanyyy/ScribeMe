@@ -7,6 +7,7 @@ import '../../../core/resources/colors.dart';
 import '../../scan/presentation/screens/file_upload.dart';
 import '../../profile/screens/profile_screen.dart';
 import '../../subscribtions/screens/subscription_screen.dart';
+import 'camera_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,8 +21,8 @@ class HomeScreenState extends State<HomeScreen> {
 
   final pages = [
     const FileUploadScreen(),
-    const Text(""),
-    const SubscriptionScreen(),
+    const CameraScreen(),
+    const SubscriptionScreen(hasBack: false),
     const ProfileScreen(),
   ];
   void _onItemTapped(int index) {

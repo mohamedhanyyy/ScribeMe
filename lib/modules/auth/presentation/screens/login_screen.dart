@@ -133,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Divider(thickness: 1, color: AppColors.grey)),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: Text("Or with".tr(), style: grey13W400),
+                    child: Text("Or continue with".tr(), style: grey13W400),
                   ),
                   const Expanded(
                       child: Divider(thickness: 1, color: AppColors.grey)),

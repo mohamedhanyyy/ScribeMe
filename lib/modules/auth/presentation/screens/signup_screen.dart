@@ -25,7 +25,8 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final formKey = GlobalKey<FormState>();
-  final fullNameController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
   final passwordController = TextEditingController();
@@ -74,10 +75,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               SizedBox(height: 24.h),
-              Text("Full name".tr(), style: primary16w600),
+              Text("First name".tr(), style: primary16w600),
               CustomTextField(
-                hintText: 'User Name'.tr(),
-                controller: fullNameController,
+                hintText: 'First name'.tr(),
+                controller: firstNameController,
+                validator: (val) => val!.nameValidator(val),
+              ),
+              SizedBox(height: 16.h),
+              Text("Last name".tr(), style: primary16w600),
+              CustomTextField(
+                hintText: 'Last name'.tr(),
+                controller: lastNameController,
                 validator: (val) => val!.nameValidator(val),
               ),
               SizedBox(height: 16.h),
@@ -87,47 +95,47 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 controller: emailController,
                 validator: (val) => val!.emailValidator(val),
               ),
-              SizedBox(height: 16.h),
-              Text("Phone number".tr(), style: primary16w600),
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.grey),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: DropdownButton<String>(
-                      value: dropDownValue,
-                      underline: const SizedBox.shrink(),
-                      items: <String>['+20', '+1', '+44', '+91']
-                          .map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 16),
-                          ),
-                        );
-                      }).toList(),
-                      iconEnabledColor: AppColors.grey,
-                      onChanged: (newValue) {
-                        dropDownValue = newValue!;
-                        setState(() {});
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Expanded(
-                    child: CustomTextField(
-                      hintText: 'Enter phone number'.tr(),
-                      controller: phoneController,
-                      validator: (val) => val!.phoneValidator(val),
-                    ),
-                  ),
-                ],
-              ),
+              // SizedBox(height: 16.h),
+              // Text("Phone number".tr(), style: primary16w600),
+              // Row(
+              //   children: [
+              //     Container(
+              //       padding: EdgeInsets.symmetric(horizontal: 8.w),
+              //       decoration: BoxDecoration(
+              //         border: Border.all(color: AppColors.grey),
+              //         borderRadius: BorderRadius.circular(8),
+              //       ),
+              //       child: DropdownButton<String>(
+              //         value: dropDownValue,
+              //         underline: const SizedBox.shrink(),
+              //         items: <String>['+20', '+1', '+44', '+91']
+              //             .map((String value) {
+              //           return DropdownMenuItem<String>(
+              //             value: value,
+              //             child: Text(
+              //               value,
+              //               style: const TextStyle(
+              //                   fontWeight: FontWeight.w400, fontSize: 16),
+              //             ),
+              //           );
+              //         }).toList(),
+              //         iconEnabledColor: AppColors.grey,
+              //         onChanged: (newValue) {
+              //           dropDownValue = newValue!;
+              //           setState(() {});
+              //         },
+              //       ),
+              //     ),
+              //     SizedBox(width: 10.w),
+              //     Expanded(
+              //       child: CustomTextField(
+              //         hintText: 'Enter phone number'.tr(),
+              //         controller: phoneController,
+              //         validator: (val) => val!.phoneValidator(val),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               SizedBox(height: 16.h),
               Text("Password".tr(), style: primary16w600),
               CustomPasswordTextField(
@@ -163,7 +171,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       context.read<SignUpCubit>().signUp(
-                          name: fullNameController.text,
+                          name: '${firstNameController.text} ${lastNameController.text}',
                           email: emailController.text,
                           phone: phoneController.text,
                           password: passwordController.text);

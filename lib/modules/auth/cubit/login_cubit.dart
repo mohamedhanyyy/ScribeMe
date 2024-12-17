@@ -26,7 +26,7 @@ class LoginCubit extends Cubit<BaseCubitState> {
         emit(BaseCubitState.error);
       } else {
         emit(BaseCubitState.done);
-        AppNavigation.navigate(const HomeScreen());
+        AppNavigation.navigateOffAll(const HomeScreen());
       }
     } on FirebaseAuthException catch (e) {
       CustomSnackBars.showErrorToast(title: e.message!);

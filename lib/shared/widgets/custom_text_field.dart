@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:subcribe/services/navigation/navigation.dart';
 
 import '../../core/resources/colors.dart';
 import '../../core/resources/styles.dart';
@@ -10,7 +11,7 @@ class CustomTextField extends StatelessWidget {
   final String? hintText;
   final Color hintColor;
   final int? maxLines;
-  final Color fillColor;
+  final Color fillColor= Theme.of(AppNavigation.context).scaffoldBackgroundColor;
   final Color borderColor;
   final String? prefixIcon;
   final double borderRadius;
@@ -21,7 +22,7 @@ class CustomTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final TextInputAction textInputAction;
 
-    const CustomTextField({
+      CustomTextField({
     super.key,
     required this.controller,
     this.hintText,
@@ -29,8 +30,7 @@ class CustomTextField extends StatelessWidget {
     this.borderRadius = 6,
     this.hintColor=const Color(0xff888888),
     this.hintFontSize,
-    this.fillColor = Colors.white,
-    this.borderColor = AppColors.borderColor,
+     this.borderColor = AppColors.borderColor,
     this.prefixIcon,
     this.suffixIcon,
     this.keyboardType = TextInputType.text,

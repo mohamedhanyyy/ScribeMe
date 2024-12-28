@@ -34,45 +34,62 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/home.svg',
-              colorFilter: _selectedIndex == 0
-                  ? AppColors.primaryColor.toColorFilter
-                  : Colors.grey.toColorFilter,
+            icon: Semantics(
+              label: 'home'.tr(),
+
+              child: SvgPicture.asset(
+                'assets/icons/home.svg',
+                colorFilter: _selectedIndex == 0
+                    ? AppColors.primaryColor.toColorFilter
+                    : Colors.grey.toColorFilter,
+              ),
             ),
             label: 'home'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/nav2.svg',
-              colorFilter: _selectedIndex == 1
-                  ? AppColors.primaryColor.toColorFilter
-                  : Colors.grey.toColorFilter,
+            icon: Semantics(
+              label: 'Snap nScribe'.tr(),
+
+              child: SvgPicture.asset(
+                'assets/icons/nav2.svg',
+                colorFilter: _selectedIndex == 1
+                    ? AppColors.primaryColor.toColorFilter
+                    : Colors.grey.toColorFilter,
+              ),
             ),
             label: 'Snap nScribe'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/nav3.svg',
-              colorFilter: _selectedIndex == 2
-                  ? AppColors.primaryColor.toColorFilter
-                  : Colors.grey.toColorFilter,
+            icon: Semantics(
+              label: 'Upgrade'.tr(),
+
+              child: SvgPicture.asset(
+                'assets/icons/nav3.svg',
+                colorFilter: _selectedIndex == 2
+                    ? AppColors.primaryColor.toColorFilter
+                    : Colors.grey.toColorFilter,
+              ),
             ),
             label: 'Upgrade'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/profile.svg',
-              colorFilter: _selectedIndex == 3
-                  ? AppColors.primaryColor.toColorFilter
-                  : Colors.grey.toColorFilter,
+
+            icon: Semantics(
+              label: 'profile'.tr(),
+              child: SvgPicture.asset(
+                'assets/icons/profile.svg',
+                colorFilter: _selectedIndex == 3
+                    ? AppColors.primaryColor.toColorFilter
+                    : Colors.grey.toColorFilter,
+              ),
             ),
             label: 'profile'.tr(),
           ),

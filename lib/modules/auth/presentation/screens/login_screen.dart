@@ -127,38 +127,38 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
               SizedBox(height: 16.h),
-              Row(
-                children: [
-                  const Expanded(
-                      child: Divider(thickness: 1, color: AppColors.grey)),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: Text("Or continue with".tr(), style: grey13W400),
-                  ),
-                  const Expanded(
-                      child: Divider(thickness: 1, color: AppColors.grey)),
-                ],
-              ),
-              SizedBox(height: 16.h),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                  onPressed: () async {
-                    await loginCubit.signInWithGoogle();
-                  },
-                  icon: SvgPicture.asset('assets/icons/google.svg'),
-                  label: Text("Google".tr(),
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                      )),
-                  style: ElevatedButton.styleFrom(
-                    side: const BorderSide(color: AppColors.grey),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                  ),
-                ),
-              ),
+              // Row(
+              //   children: [
+              //     const Expanded(
+              //         child: Divider(thickness: 1, color: AppColors.grey)),
+              //     Padding(
+              //       padding: EdgeInsets.symmetric(horizontal: 8.w),
+              //       child: Text("Or continue with".tr(), style: grey13W400),
+              //     ),
+              //     const Expanded(
+              //         child: Divider(thickness: 1, color: AppColors.grey)),
+              //   ],
+              // ),
+              // SizedBox(height: 16.h),
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: ElevatedButton.icon(
+              //     onPressed: () async {
+              //       await loginCubit.signInWithGoogle();
+              //     },
+              //     icon: SvgPicture.asset('assets/icons/google.svg'),
+              //     label: Text("Google".tr(),
+              //         style: const TextStyle(
+              //           color: Colors.black,
+              //           fontWeight: FontWeight.w500,
+              //         )),
+              //     style: ElevatedButton.styleFrom(
+              //       side: const BorderSide(color: AppColors.grey),
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(8)),
+              //     ),
+              //   ),
+              // ),
               SizedBox(height: 24.h),
               Center(
                 child: TextButton(
@@ -167,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: Text.rich(
                     TextSpan(
-                      text: "Don't have an account? ".tr(),
+                      text: "dont have an account".tr(),
                       style: lightGrey15W400,
                       children: [
                         TextSpan(

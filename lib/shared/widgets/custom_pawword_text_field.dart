@@ -61,15 +61,18 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
                     SvgPicture.asset('assets/icons/${widget.prefixIcon}.svg'),
               )
             : const SizedBox(width: 10),
-        suffixIcon: IconButton(
-          icon: Icon(
-            _isObscured ? Icons.visibility_off : Icons.visibility,
+        suffixIcon: Semantics(
+          label: 'password',
+          child: IconButton(
+            icon: Icon(
+              _isObscured ? Icons.visibility_off : Icons.visibility,
+            ),
+            onPressed: () {
+              setState(() {
+                _isObscured = !_isObscured;
+              });
+            },
           ),
-          onPressed: () {
-            setState(() {
-              _isObscured = !_isObscured;
-            });
-          },
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: widget.borderColor),

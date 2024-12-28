@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:subcribe/modules/auth/presentation/screens/login_screen.dart';
 import 'package:subcribe/modules/home/screens/home_screen.dart';
 import 'package:subcribe/modules/scan/presentation/cubit/image_summary_bloc.dart';
+import 'package:subcribe/services/cache/cache_helper.dart';
 import 'package:subcribe/services/navigation/navigation.dart';
 import 'package:subcribe/shared/functions/general_functions.dart';
 import 'package:subcribe/shared/themes/app_theme.dart';
@@ -17,6 +18,7 @@ import 'modules/auth/cubit/sign_up_cubit.dart';
 import 'modules/history/cubit/user_history_cubit.dart';
 import 'modules/scan/presentation/cubit/pdf_bloc.dart';
 import 'modules/scan/presentation/cubit/text_reader_cubit.dart';
+import 'modules/subscribtions/cubit/subscribe_cubit.dart';
 
 class ScribeMeApp extends StatelessWidget {
   const ScribeMeApp({super.key});
@@ -33,6 +35,7 @@ class ScribeMeApp extends StatelessWidget {
             providers: [
               BlocProvider(create: (context) => LoginCubit()),
               BlocProvider(create: (context) => SignUpCubit()),
+              BlocProvider(create: (context) => SubscribeCubit()),
               BlocProvider(create: (context) => PdfSummaryCubit()),
               BlocProvider(create: (context) => ForgetPasswordCubit()),
               BlocProvider(create: (context) => ImageSummaryCubit()),
@@ -44,6 +47,7 @@ class ScribeMeApp extends StatelessWidget {
               locale: context.locale,
               title: 'ScribeMe',
               darkTheme: AppThemes.darkTheme,
+              themeMode: CacheHelper.getDarkMode()==true?ThemeMode.dark:ThemeMode.light,
               theme: AppThemes.whiteTheme,
               debugShowCheckedModeBanner: false,
               localizationsDelegates: context.localizationDelegates,

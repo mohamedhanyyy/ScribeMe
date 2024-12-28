@@ -16,4 +16,6 @@ class AppColors {
   static const blue = Color(0xff0167FF);
   static const lightBlue = Color(0xff3B9BD5);
   static const borderColor = Color(0xffDCE0E4);
+  static const grey2 = Color(0xff7A7A7A);
+
 }

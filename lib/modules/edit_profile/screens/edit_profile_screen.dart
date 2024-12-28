@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:subcribe/modules/auth/presentation/screens/change_password_screen.dart';
 
 import '../../../core/resources/colors.dart';
 import '../../../services/navigation/navigation.dart';
-import '../../../shared/widgets/custom_appbar.dart';
 import '../../profile/screens/profile_screen.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -18,10 +18,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButtonWidget(),
+        
         centerTitle: true,
-        title: const Text('Manage Profile',
-            style: TextStyle(
+        title:   Text('manage profile'.tr(),
+            style: const TextStyle(
                 color: AppColors.primaryColor,
                 fontWeight: FontWeight.w500,
                 fontSize: 15)),
